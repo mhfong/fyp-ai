@@ -1,9 +1,21 @@
-# fyp-ai
-
-Model 1
-- Predict high/low price of QQQ of 5 business based on Top 10 weighting companies
-- No result yet, still building
-
-Model 2
-- Predict high/low price of QQQ of 5 business based on its historical data
-- can predict n days result but still improving model
+# Predicting n days High & Low price of QQQ using different models
+  **Download this repo to your local machine and run the following command**
+  ```
+  python main.py
+  ```
+  **To change dataset (default is 1):**
+  ```
+  python main.py -d 2
+  ```
+  **To change predict days to 5 (default is 1):**
+  ```
+  python main.py -p 5
+  ```
+  **To skip training:**
+  ```
+  python main.py -t 0
+  ```
+  **To change model to LSTM (default is GRU):**
+  ```
+  python main.py -m lstm
+  ```
