@@ -2,6 +2,9 @@
 #
 #
 torch
+pandas
+numpy
 sklearn
 matplotlib
 torchsummaryX
+yfinance
