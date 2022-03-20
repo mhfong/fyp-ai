@@ -12,7 +12,7 @@
   ```
   python main.py -p 5
   ```
-  **To skip training:**
+  **To skip training (default is 1):**
   ```
   python main.py -t 0
   ```
