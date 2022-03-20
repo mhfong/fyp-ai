@@ -25,7 +25,7 @@ class Config:
     dateset_type = 1
     train_data_rate = 0.95
 
-    do_train = False
+    do_train = True
     do_predict = True
     time_step = 20
     valid_data_rate = 0.15
@@ -104,7 +104,7 @@ if __name__=="__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--dateset_type", default=1, type=int, help="use which dataset type")
     parser.add_argument("-p", "--predict_day", default=1, type=int, help="predict how many days")
-    parser.add_argument("-t", "--do_train", default=False, type=bool, help="whether to train")
+    parser.add_argument("-t", "--do_train", default=True, type=bool, help="whether to train")
     parser.add_argument("-m", "--model_type", default="gru", type=str, help="train with which model")
     args = parser.parse_args()
     config = Config()
