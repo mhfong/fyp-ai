@@ -4,19 +4,19 @@
   pip install -r requirements.txt
   python main.py
   ```
-  **To change dataset (default is 1):**
+  **To change dataset type (default is qqq):**
   ```
-  python main.py -d 2
+  python main.py -d top10
   ```
   **To change predict days to 5 (default is 1):**
   ```
   python main.py -p 5
   ```
-  **To skip training (default is 1):**
+  **To skip training:**
   ```
-  python main.py -t 0
+  python main.py -t
   ```
-  **To change model to LSTM (default is GRU):**
+  **To change model to GRU (default is lstm):**
   ```
-  python main.py -m lstm
+  python main.py -m gru
   ```

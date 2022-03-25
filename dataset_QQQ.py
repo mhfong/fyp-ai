@@ -4,6 +4,52 @@ import os
 import yfinance as yf
 from sklearn.model_selection import train_test_split
 
+class Config:
+
+    etf = "QQQ"
+
+    dataset_type = "QQQ"
+
+    feature_columns = list(range(1,7))
+    label_columns = [2,3]
+    label_in_feature_index = (lambda x,y: [x.index(i) for i in y])(feature_columns, label_columns)
+
+    predict_day = 1
+
+    model_type = "gru"
+    train_data_rate = 0.95
+
+    do_train = True
+    do_predict = True
+    time_step = 20
+    valid_data_rate = 0.15
+    random_seed = 42
+    shuffle_train_data = True
+
+    input_size = len(feature_columns)
+    output_size = len(label_columns)
+    hidden_size = 128       
+    layers = 2
+    dropout_rate = 0.2
+    batch_size = 64
+    learning_rate = 0.001
+    epoch = 100
+    do_continue_train = False
+    do_train_visualized = False
+    patience = 5
+    
+    model_save_path = "./saved_model/"
+    if model_type=="gru":
+        model_name = "GRU_model.pth"
+    elif model_type=="lstm":
+        model_name = "LSTM_model.pth"
+    if not os.path.exists(model_save_path):
+        os.makedirs(model_save_path)
+
+    data_save_path = "./dataset/"
+    if not os.path.exists(data_save_path):
+        os.makedirs(data_save_path)
+
 class Data:
     def __init__(self, config):
         self.config = config
@@ -18,11 +64,10 @@ class Data:
         self.norm_data = (self.data - self.mean)/self.std 
 
     def read_data(self):
-        #if not os.path.exists(self.config.data_save_path+self.config.etf+".csv"):
         df = yf.download(self.config.etf)
         df.to_csv(self.config.data_save_path+self.config.etf+".csv")
-        init_data = pd.read_csv(self.config.data_save_path+self.config.etf+".csv", usecols=self.config.feature_columns)
-        return init_data.values, init_data.columns.tolist()
+        df = pd.read_csv(self.config.data_save_path+self.config.etf+".csv", usecols=self.config.feature_columns)
+        return df.values, df.columns.tolist()
 
     def get_train_and_valid_data(self):
         feature_data = self.norm_data[:self.train_num]

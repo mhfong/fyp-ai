@@ -84,7 +84,7 @@ def train(config, train_and_valid_data):
         if valid_loss_cur < valid_loss_min:
             valid_loss_min = valid_loss_cur
             bad_epoch = 0
-            torch.save(model.state_dict(), config.model_save_path + "LSTM_model.pth")
+            torch.save(model.state_dict(), config.model_save_path + "LSTM_" + config.dataset_type + "_model.pth")
         else:
             bad_epoch += 1
             if bad_epoch >= config.patience:    # Stop training if bad epoch
@@ -99,7 +99,7 @@ def predict(config, test_X):
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model = LSTM(config.input_size, config.hidden_size, config.layers, config.output_size, config.dropout_rate).to(device)
-    model.load_state_dict(torch.load(config.model_save_path + "LSTM_model.pth"))
+    model.load_state_dict(torch.load(config.model_save_path + "LSTM_" + config.dataset_type + "_model.pth"))
 
     result = torch.Tensor().to(device)
 
