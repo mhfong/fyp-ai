@@ -1,5 +1,5 @@
 # Predicting n days High & Low price of QQQ using different models
-  **Download this repo to your local machine and run the following commands**
+  **Clone this repo to your local machine and run the following commands**
   ```
   pip install -r requirements.txt
   python main.py
