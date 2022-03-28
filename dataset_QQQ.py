@@ -39,10 +39,6 @@ class Config:
     patience = 5
     
     model_save_path = "./saved_model/"
-    if model_type=="gru":
-        model_name = "GRU_model.pth"
-    elif model_type=="lstm":
-        model_name = "LSTM_model.pth"
     if not os.path.exists(model_save_path):
         os.makedirs(model_save_path)
 
