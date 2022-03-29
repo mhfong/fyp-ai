@@ -1,4 +1,4 @@
-# Predicting n days High & Low price of QQQ using different models
+# Predicting n days High & Low price of QQQ using 2 models with 2 datasets
   **Clone this repo to your local machine and run the following commands**
   ```
   git clone https://github.com/mhfong/fyp-ai.git
