@@ -1,6 +1,8 @@
 # Predicting n days High & Low price of QQQ using different models
   **Clone this repo to your local machine and run the following commands**
   ```
+  git clone https://github.com/mhfong/fyp-ai.git
+  cd fyp-ai/
   pip install -r requirements.txt
   python main.py
   ```
