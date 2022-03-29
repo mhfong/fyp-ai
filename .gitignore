@@ -12,6 +12,8 @@
 /build
 /saved_model
 /dataset
+/notebook
+
 # misc
 .DS_Store
 .env.local
