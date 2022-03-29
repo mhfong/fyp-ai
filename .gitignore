@@ -10,7 +10,8 @@
 
 # production
 /build
-
+/saved_model
+/dataset
 # misc
 .DS_Store
 .env.local
