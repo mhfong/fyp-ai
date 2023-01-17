@@ -4,7 +4,7 @@
 torch
 pandas
 numpy
-sklearn
+scikit-learn
 matplotlib
 torchsummaryX
 yfinance
